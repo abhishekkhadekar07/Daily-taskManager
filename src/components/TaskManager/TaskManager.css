@@ -1,0 +1,56 @@
+.header {
+  margin-bottom: 30px;
+
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff !important;
+}
+
+.title {
+  position: relative;
+  right: 466px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.task-section {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.task-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.task-actions {
+  margin-top: 1rem;
+}
+
+.task-actions .btn {
+  font-size: 0.9rem;
+}
+
+.bg-warning {
+  background-color: #fff3cd !important;
+}
+
+.bg-primary {
+  background-color: #cce5ff !important;
+}
+
+.bg-success {
+  background-color: #d4edda !important;
+}

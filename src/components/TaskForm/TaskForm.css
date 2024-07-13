@@ -1,0 +1,50 @@
+/* TaskForm.css */
+.modal-header {
+  background-color: #343a40;
+  color: white;
+  border-bottom: none;
+  text-align: center;
+}
+
+.modal-title {
+  margin: 0 auto;
+
+}
+
+
+
+.modal-body {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 1rem 2rem;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
