@@ -81,12 +81,12 @@ const TaskManager = () => {
     localStorage.setItem("taskList", JSON.stringify(updatedTasks));
   };
 
-  const handleDragStart = (e, status, index) => {
+  const handleDragTask = (e, status, index) => {
     e.dataTransfer.setData("status", status);
     e.dataTransfer.setData("index", index);
   };
 
-  const handleDrop = (e, newStatus) => {
+  const handleDropBetweenSection = (e, newStatus) => {
     const status = e.dataTransfer.getData("status");
     const index = e.dataTransfer.getData("index");
     const task = tasks[status][index];
@@ -98,7 +98,7 @@ const TaskManager = () => {
     localStorage.setItem("taskList", JSON.stringify(updatedTasks));
   };
 
-  const allowDrop = (e) => {
+  const allowDropTask= (e) => {
     e.preventDefault();
   };
 
@@ -135,9 +135,9 @@ const TaskManager = () => {
             status={status}
             handleEditTask={handleEditTask}
             handleDeleteTask={handleDeleteTask}
-            handleDragStart={handleDragStart}
-            handleDrop={handleDrop}
-            allowDrop={allowDrop}
+            handleDragTask={handleDragTask}
+            handleDropBetweenSection={handleDropBetweenSection}
+            allowDropTask={allowDropTask}
             completedPercentage={completedPercentage}
           />
         ))}

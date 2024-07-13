@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import React from 'react';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, MenuItem } from '@mui/material';
 
 const TaskForm = ({
   show,
@@ -8,76 +8,90 @@ const TaskForm = ({
   handleInputChange,
   handleSaveTask,
   editTaskIndex,
-
 }) => {
   return (
-    <Modal show={show} onHide={onHide}>
-      <Modal.Header closeButton>
-        <Modal.Title className="Title_">
-          {editTaskIndex !== null ? "Edit Task" : "Add Task"}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form>
-          <Form.Group>
-            <Form.Label> Title</Form.Label>
-            <Form.Control
-              type="text"
-              name="title"
-              value={newTask.title}
-              onChange={handleInputChange}
-              placeholder="Enter  title"
-              required
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label> Description</Form.Label>
-            <Form.Control
-              type="text"
-              name="description"
-              value={newTask.description}
-              onChange={handleInputChange}
-              placeholder="Enter  description"
-              required
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>End Date</Form.Label>
-            <Form.Control
-              type="date"
-              name="ChooseEndDate"
-              value={newTask.ChooseEndDate}
-              onChange={handleInputChange}
-              placeholder="Choose End Date"
-              required
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Priority </Form.Label>
-            <Form.Control
-              type="text"
-              name="priority"
-              value={newTask.priority}
-              onChange={handleInputChange}
-              placeholder="choose priority"
-              required
-            />
-          </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
+    <Dialog open={show} onClose={onHide}>
+      <DialogTitle>{editTaskIndex !== null ? "Edit Task" : "Add Task"}</DialogTitle>
+      <DialogContent>
+        <form>
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Title"
+            type="text"
+            name="title"
+            value={newTask.title}
+            onChange={handleInputChange}
+            placeholder="Enter title"
+            required
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Description"
+            type="text"
+            name="description"
+            value={newTask.description}
+            onChange={handleInputChange}
+            placeholder="Enter description"
+            required
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            label="End Date"
+            type="date"
+            name="endDate"
+            value={newTask.endDate}
+            onChange={handleInputChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            required
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Priority"
+            select
+            name="priority"
+            value={newTask.priority}
+            onChange={handleInputChange}
+            required
+          >
+            <MenuItem value="High">High</MenuItem>
+            <MenuItem value="Medium">Medium</MenuItem>
+            <MenuItem value="Low">Low</MenuItem>
+          </TextField>
+        </form>
+      </DialogContent>
+      <DialogActions>
+        <Button
+          onClick={onHide}
+          color="secondary"
+          variant="outlined"
+          sx={{
+            color: 'white',
+            backgroundColor: '#f50057',
+            '&:hover': {
+              backgroundColor: '#c51162',
+            },
+            borderRadius: 50,
+            padding: '8px 16px',
+          }}
+        >
           Close
         </Button>
         <Button
-          variant="primary"
           onClick={handleSaveTask}
-   
+          color="primary"
+          variant="contained"
+          sx={{ borderRadius: 50, padding: '8px 16px' }}
         >
           Save
         </Button>
-      </Modal.Footer>
-    </Modal>
+      </DialogActions>
+    </Dialog>
   );
 };
 
