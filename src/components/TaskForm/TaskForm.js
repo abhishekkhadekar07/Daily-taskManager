@@ -16,33 +16,37 @@ const TaskForm = ({
         <form>
           <TextField
             fullWidth
+            id='title'
+            data-testid='title'
             margin="normal"
             label="Title"
             type="text"
             name="title"
-            value={newTask.title}
+            value={newTask?.title}
             onChange={handleInputChange}
             placeholder="Enter title"
             required
           />
           <TextField
             fullWidth
+            id='Description'
             margin="normal"
             label="Description"
             type="text"
             name="description"
-            value={newTask.description}
+            value={newTask?.description}
             onChange={handleInputChange}
             placeholder="Enter description"
             required
           />
           <TextField
             fullWidth
+            id='endDate'
             margin="normal"
             label="End Date"
             type="date"
             name="endDate"
-            value={newTask.endDate}
+            value={newTask?.endDate}
             onChange={handleInputChange}
             InputLabelProps={{
               shrink: true,
@@ -51,11 +55,12 @@ const TaskForm = ({
           />
           <TextField
             fullWidth
+            id='Priority'
             margin="normal"
             label="Priority"
             select
             name="priority"
-            value={newTask.priority}
+            value={newTask?.priority}
             onChange={handleInputChange}
             required
           >
@@ -68,6 +73,9 @@ const TaskForm = ({
       <DialogActions>
         <Button
           onClick={onHide}
+          id='closeButton'
+          className='closeButton'
+          data-testid='closeButton'
           color="secondary"
           variant="outlined"
           sx={{

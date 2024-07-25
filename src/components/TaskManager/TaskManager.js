@@ -111,7 +111,7 @@ const TaskManager = () => {
   return (
     <div className="App">
       <div className="header">
-        <h1 className="title">Daily TaskManager</h1>
+        <h1 >Daily TaskManager</h1>
       </div>
       <div className="button-container">
         <Button variant="primary" onClick={handleAddTask}>
