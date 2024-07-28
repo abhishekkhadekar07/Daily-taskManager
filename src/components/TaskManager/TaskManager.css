@@ -2,7 +2,10 @@
   margin-bottom: 30px;
 
 }
-
+.title{
+  position: relative;
+  left: -600px;
+}
 .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;
@@ -11,7 +14,13 @@
   align-items: center;
   color: #fff !important;
 }
-
+.header{
+  background-color: beige;
+}
+.btn{
+  background-color: black !important;
+  color: white !important;
+}
 .title {
   position: relative;
   right: 466px;

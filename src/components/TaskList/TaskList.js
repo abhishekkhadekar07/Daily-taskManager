@@ -60,16 +60,16 @@ const TaskList = ({
           <CardActions>
             {status === 'pending' && (
               <>
-                <IconButton onClick={() => handleEditTask(status, index)}>
+                <IconButton aria-label="edit" onClick={() => handleEditTask(status, index)}>
                   <EditIcon />
                 </IconButton>
-                <IconButton onClick={() => handleDeleteTask(status, index)}>
+                <IconButton aria-label="delete" onClick={() => handleDeleteTask(status, index)}>
                   <DeleteIcon />
                 </IconButton>
               </>
             )}
             {status === 'inProcess' && (
-              <IconButton onClick={() => handleDeleteTask(status, index)}>
+              <IconButton aria-label="delete" onClick={() => handleDeleteTask(status, index)}>
                 <DeleteIcon />
               </IconButton>
             )}
